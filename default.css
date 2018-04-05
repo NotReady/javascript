@@ -1,0 +1,16 @@
+body{
+  background-color: #222;
+}
+
+div#main{
+  width: 600px;
+  margin: 50px auto;
+  background-color: #eee;
+  padding: 10%;
+}
+
+h2#result{
+  border: dashed 4px #aaa;
+  background-color: #fff;
+  padding: 10px 20px;
+}
