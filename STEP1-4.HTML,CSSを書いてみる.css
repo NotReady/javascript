@@ -1,0 +1,19 @@
+/* 要素指定 */
+p{
+  text-decoration: underline;
+}
+
+/* id指定 */
+#a{
+  color: #FF0000;
+}
+
+/* クラス指定 */
+.b{
+  font-size: 1.5em;
+}
+
+/* クラス指定 */
+.c{
+  color: blue;
+}
