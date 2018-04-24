@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>誰も教えてくれない、JavaScript初学者がプログラムを書けるようになる方法</title>
+  </head>
+  <body>
+    <div id="clock"></div>
+    <script type="text/javascript">
+      // 現在時刻
+      const currentTime = new Date().getTime();
+      console.log(currentTime);
+      // 終了時刻
+      const endTime = new Date().getTime() + (1000*60)*60*24*10;
+      console.log(endTime);
+      
+      // 時間差を求めるmsec精度
+      function getRemainingTime(deadline){
+        const currentTime = new Date().getTime();
+        return deadline - currentTime;
+      }
+
+      console.log(getRemainingTime(endTime));
+
+      // clock要素
+      const clock = document.getElementById('clock');
+      
+      // clock要素に時間差を更新する
+      function showTime(){
+        const remainingTime = getRemainingTime(endTime);
+        
+        const seconds = ('0' + Math.floor((remainingTime/1000) % 60)).slice(-2);
+        const minutes = ('0' + Math.floor((remainingTime/(60*1000)) % 60)).slice(-2);
+        const hours = ('0' + Math.floor((remainingTime/(60*60*1000)) % 24)).slice(-2);
+        const days = ('0' + Math.floor((remainingTime/(24*60*60*1000)))).slice(-2);
+
+        clock.innerHTML = `${days}:${hours}:${minutes}:${seconds}`;
+        requestAnimationFrame(showTime);
+      }
+
+      // レンダリング
+      requestAnimationFrame(showTime);
+    </script>
+  </body>
+</html>
