@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>jQueryUI</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+    <!--
+    $(function(){
+      // ドラッグ
+      $(".box").draggable({
+        containment: "#dragArea"
+      });
+      // ドロップIN
+      $("#dropArea").droppable({
+        accept: ".box", 
+        drop: function(e, ui){
+          $("#infoArea").html(ui.draggable.text() + " IN");
+        },
+        // ドロップアウト
+        out: function(event, ui){
+          $("#infoArea").html(ui.draggable.text() + " OUT");
+        }
+      });
+    });
+    -->
+    </script>
+    <style>
+    .box{width: 40px; height: 40px; text-align: center;}
+    #box1{background-color: pink;}
+    #box2{background-color: orchid;}
+    #box3{background-color: skyblue;}
+    #dragArea{background-color: #CCC; padding: 20px;}
+    #dropArea{width: 90%; height: 100px; text-align: left; background-color: bisque;}
+    </style>
+  </head>
+  <body>
+    <div id="dragArea">
+      <div style="display: inline-flex; align-items: center;">
+        <div id="box1" class="box">1</div>
+        <div id="box2" class="box">2</div>
+        <div id="box3" class="box">3</div>
+      </div>
+      <div id="dropArea">
+        <p>ドロップエリア</p>
+      </div>
+      <div id="infoArea">
+      </div>
+    </div>
+  </body>
+</html>
