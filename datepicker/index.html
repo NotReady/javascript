@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>air datepicker sample</title>
+
+    <link rel="stylesheet" href="./air-datepicker/dist/css/datepicker.min.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <script type="text/javascript" src="./air-datepicker/dist/js/datepicker.min.js"></script>
+    <script type="text/javascript" src="./air-datepicker/dist/js/i18n/datepicker.ja.js"></script>
+
+  </head>
+  <body>
+    <input type="text"
+           class="datepicker-here"
+           data-language="ja"
+           data-date-format="yyyy/mm/dd"
+           id="datepicker"
+           data-position="right top" />
+    <script>
+    $().ready(function(){
+      $("#datepicker").datepicker([]);
+      $("#datepicker").data('datepicker');
+    });
+    </script>
+  </body>
+</html>
